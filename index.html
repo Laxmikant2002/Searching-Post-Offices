@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Post Office Application</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="left">
+        <h1>Post Office Application.</h1>
+        <p class="lead">This Application Allows you to extract information about the nearest Post Offices, based on your location.</p>
+        <div class="illustration"></div>
+      </section>
+
+      <section class="right">
+        <div class="card">
+          <h2>Your Current IP Address is <span id="ipDisplay">loading...</span></h2>
+          <button id="getStartedBtn" class="btn">Get Started</button>
+        </div>
+
+        <div id="details" class="details hidden">
+          <div class="info-row">
+            <div>IP Address : <strong id="ipAddressSmall"></strong></div>
+            <div>Lat: <strong id="lat"></strong></div>
+            <div>Long: <strong id="lon"></strong></div>
+            <div>City: <strong id="city"></strong></div>
+            <div>Region: <strong id="region"></strong></div>
+            <div>Organisation: <strong id="org"></strong></div>
+            <div>Hostname: <strong id="hostname"></strong></div>
+          </div>
+
+          <h3>Your Current Location</h3>
+          <div class="map-wrap">
+            <!-- Embedded Google Map iframe (uses lat,lon in query) -->
+            <iframe id="mapFrame" title="user-map" src="" frameborder="0" allowfullscreen></iframe>
+            <!-- Geoapify static image fallback (uses provided API key) -->
+            <img id="geoImg" alt="geoapify-map" src="" style="display:none;" />
+          </div>
+
+          <h3>More Information About You</h3>
+          <div class="more-info">
+            <div>Time Zone: <span id="timezone"></span></div>
+            <div>Date And Time: <span id="timeDisplay"></span></div>
+            <div>Pincode: <span id="pincode"></span></div>
+            <div>Message: <span id="message"></span></div>
+          </div>
+
+          <h3>Post Offices Near You</h3>
+          <input id="search" type="search" placeholder="Search By Name" />
+          <div id="postOfficesContainer" class="post-offices"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
